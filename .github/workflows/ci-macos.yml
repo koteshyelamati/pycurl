@@ -25,7 +25,7 @@ jobs:
     env:
       PYCURL_CURL_CONFIG: /usr/bin/curl-config
       PYCURL_SSL_LIBRARY: sectransp
-      VCPKG_BINARY_SOURCES: 'clear;nuget,GitHub,readwrite'
+      VCPKG_BINARY_SOURCES: "clear;nuget,GitHub,${{ github.event_name == 'pull_request' && 'read' || 'readwrite' }}"
     strategy:
       fail-fast: false
       matrix:
