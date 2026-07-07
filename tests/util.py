@@ -291,6 +291,19 @@ def only_tls_srp(fn):
     return decorated
 
 
+def only_psl(fn):
+    import pycurl
+
+    @functools.wraps(fn)
+    def decorated(*args, **kwargs):
+        if not pycurl.version_info()[4] & pycurl.VERSION_PSL:
+            raise unittest.SkipTest("libcurl does not support libpsl")
+
+        return fn(*args, **kwargs)
+
+    return decorated
+
+
 def guard_unknown_libcurl_option(fn):
     """Converts curl error 48, CURLE_UNKNOWN_OPTION, into a SkipTest
     exception. This is meant to be used with tests exercising libcurl
