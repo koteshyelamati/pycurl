@@ -72,18 +72,18 @@ a Git checkout, please follow instruction in the `Git Checkout`_ section
 of INSTALL.rst.
 
 .. _PyPI: https://pypi.python.org/pypi/pycurl
-.. _INSTALL.rst: http://pycurl.io/docs/latest/install.html
-.. _Git Checkout: http://pycurl.io/docs/latest/install.html#git-checkout
+.. _INSTALL.rst: https://pycurl.github.io/docs/latest/install.html
+.. _Git Checkout: https://pycurl.github.io/docs/latest/install.html#git-checkout
 
 
 Documentation
 -------------
 
 Documentation for the most recent PycURL release is available on
-`PycURL website <http://pycurl.io/docs/latest/>`_.
+`PycURL website <https://pycurl.github.io/docs/latest/>`_.
 
 Documentation for the development version of PycURL
-is available `here <http://pycurl.io/docs/dev/>`_.
+is available `here <https://pycurl.github.io/docs/dev/>`_.
 
 To build documentation from source, run ``make docs``.
 Building documentation requires `Sphinx <http://sphinx-doc.org/>`_ to
@@ -226,7 +226,7 @@ License
     included in the file COPYING-MIT.  You can redistribute and/or modify PycURL
     according to the terms of either license.
 
-.. _PycURL: http://pycurl.io/
+.. _PycURL: https://pycurl.github.io/
 .. _libcurl: https://curl.haxx.se/libcurl/
 .. _urllib: http://docs.python.org/library/urllib.html
 .. _`the repository`: https://github.com/pycurl/pycurl

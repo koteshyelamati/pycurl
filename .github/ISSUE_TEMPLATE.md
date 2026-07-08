@@ -1,5 +1,5 @@
 Prior to creating an issue, please review the troubleshooting documentation:
-http://pycurl.io/docs/dev/troubleshooting.html
+https://pycurl.github.io/docs/dev/troubleshooting.html
 
 
 ## What did you try to do?

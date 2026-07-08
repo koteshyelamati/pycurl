@@ -36,8 +36,8 @@ classifiers = [
 dynamic = ["version", "readme"]
 
 [project.urls]
-Homepage      = "http://pycurl.io/"
-Documentation = "http://pycurl.io/docs/latest/"
+Homepage      = "https://pycurl.github.io/"
+Documentation = "https://pycurl.github.io/docs/latest/"
 Source        = "https://github.com/pycurl/pycurl"
 Issues        = "https://github.com/pycurl/pycurl/issues"
 Changelog     = "https://github.com/pycurl/pycurl/blob/master/ChangeLog"

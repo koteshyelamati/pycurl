@@ -20,7 +20,7 @@ Here is how we can retrieve a network resource::
 
     buffer = BytesIO()
     c = pycurl.Curl()
-    c.setopt(c.URL, 'http://pycurl.io/')
+    c.setopt(c.URL, 'https://pycurl.github.io/')
     c.setopt(c.WRITEDATA, buffer)
     c.setopt(c.CAINFO, certifi.where())
     c.perform()
@@ -93,7 +93,7 @@ It is often helpful to compare verbose output from the program using PycURL
 with that of ``curl`` command line tool when the latter is invoked with
 ``-v`` option::
 
-    curl -v http://pycurl.io/
+    curl -v https://pycurl.github.io/
 
 
 Examining Response Headers
@@ -137,7 +137,7 @@ examine the response headers::
 
     buffer = BytesIO()
     c = pycurl.Curl()
-    c.setopt(c.URL, 'http://pycurl.io')
+    c.setopt(c.URL, 'https://pycurl.github.io')
     c.setopt(c.WRITEFUNCTION, buffer.write)
     # Set our header function.
     c.setopt(c.HEADERFUNCTION, header_function)
@@ -196,7 +196,7 @@ for a change::
     # can be written to it without decoding.
     with open('out.html', 'wb') as f:
         c = pycurl.Curl()
-        c.setopt(c.URL, 'http://pycurl.io/')
+        c.setopt(c.URL, 'https://pycurl.github.io/')
         c.setopt(c.WRITEDATA, f)
         c.perform()
         c.close()
@@ -252,7 +252,7 @@ accessible via ``getinfo`` call as follows::
 
     buffer = BytesIO()
     c = pycurl.Curl()
-    c.setopt(c.URL, 'http://pycurl.io/')
+    c.setopt(c.URL, 'https://pycurl.github.io/')
     c.setopt(c.WRITEDATA, buffer)
     c.perform()
 

@@ -67,7 +67,7 @@ files being written to must be opened in binary mode for the writes to work::
 
     import pycurl
     c = pycurl.Curl()
-    c.setopt(c.URL,'http://pycurl.io')
+    c.setopt(c.URL,'https://pycurl.github.io')
     # File opened in binary mode.
     with open('/dev/null','wb') as f:
         c.setopt(c.WRITEDATA, f)
@@ -99,7 +99,7 @@ the response must be written to a ``BytesIO`` object::
     import pycurl
     from io import BytesIO
     c = pycurl.Curl()
-    c.setopt(c.URL,'http://pycurl.io')
+    c.setopt(c.URL,'https://pycurl.github.io')
     buffer = BytesIO()
     c.setopt(c.WRITEDATA, buffer)
     # Same result if using WRITEFUNCTION instead:
@@ -112,7 +112,7 @@ Attempting to use a ``StringIO`` object will produce an error::
     import pycurl
     from io import StringIO
     c = pycurl.Curl()
-    c.setopt(c.URL,'http://pycurl.io')
+    c.setopt(c.URL,'https://pycurl.github.io')
     buffer = StringIO()
     c.setopt(c.WRITEDATA, buffer)
     c.perform()
@@ -128,7 +128,7 @@ To decode the response body::
     import pycurl
     from io import BytesIO
     c = pycurl.Curl()
-    c.setopt(c.URL,'http://pycurl.io')
+    c.setopt(c.URL,'https://pycurl.github.io')
     buffer = BytesIO()
     c.setopt(c.WRITEDATA, buffer)
     c.perform()
