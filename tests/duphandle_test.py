@@ -43,13 +43,13 @@ class DuphandleTest(unittest.TestCase):
         assert dup.dup_attr == 'dup-value'
         dup.close()
 
-    def slist_check(self, handle, value, persistance=True):
+    def slist_check(self, handle, value, persistence=True):
         body = BytesIO()
         handle.setopt(pycurl.WRITEFUNCTION, body.write)
         handle.setopt(pycurl.URL, 'http://%s:8380/header_utf8?h=x-test-header' % localhost)
         handle.perform()
         result = body.getvalue().decode('utf-8')
-        assert (result == value) == persistance
+        assert (result == value) == persistence
 
     def slist_test(self, clear_func, *args):
         # new slist object is created with ref count = 1
@@ -60,7 +60,7 @@ class DuphandleTest(unittest.TestCase):
         clear_func(*args)
         # null ref is copied - no effect
         dup2 = self.orig.duphandle()
-        # check slist object persistance
+        # check slist object persistence
         self.slist_check(dup1, 'orig-slist', True)
         self.slist_check(dup2, 'orig-slist', False)
         # check overwriting - orig slist is decref'ed to 0 and finally deallocated
@@ -80,13 +80,13 @@ class DuphandleTest(unittest.TestCase):
         # util_curl_unsetopt()
         self.slist_test(self.orig.unsetopt, pycurl.HTTPHEADER)
 
-    def httppost_check(self, handle, value, persistance=True):
+    def httppost_check(self, handle, value, persistence=True):
         body = BytesIO()
         handle.setopt(pycurl.WRITEFUNCTION, body.write)
         handle.setopt(pycurl.URL, 'http://%s:8380/postfields' % localhost)
         handle.perform()
         result = json.loads(body.getvalue())
-        assert (result == value) == persistance
+        assert (result == value) == persistence
 
     def httppost_test(self, clear_func, *args):
         with pytest.warns(DeprecationWarning, match="HTTPPOST is deprecated; use MIMEPOST"):
